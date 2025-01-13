@@ -1,0 +1,554 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #27303d;
+}
+
+.first-section {
+    background-color: #f5f5f5;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    z-index: 5;
+    background: linear-gradient(-45deg, #40a2d7 0%, #40a2D7 25%, #4cc0ff 25%, #4cc0ff 50%, #27303d 50%, #27303d 75%, #1f2732 75%, #1f2732 100%);
+
+}
+
+
+.left {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.first-left-content {
+    width: 80%;
+    height: fit-content;
+    
+    margin-top: 20%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    /* border: #f0f solid 1px; */
+}
+
+.title {
+    font-size: 4.5em;
+    font-weight: 700;
+    color: #ffffff;
+    
+    font-family: 'Tomorrow', Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.description{
+    font-size: 1.5em;
+    font-weight: 400;
+    color: #ffffff;
+    
+    margin-top: 50px;
+    
+    font-family: 'Tomorrow', Arial, Helvetica, sans-serif;
+    
+    /* border-bottom: #ff0 3px solid; */
+}
+
+
+.right {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+.phone {
+    width: 400px;
+    height: 800px;
+    background: #000;
+    border-radius: 50px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    position: relative;
+
+    margin-top: 20px;
+    margin-right: 20px;
+    
+    z-index: 7;
+}
+
+.notch{
+    width: 40%;
+    height: 25px;
+    background: #000;
+    
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+    z-index: 9;
+}
+
+
+.screen {
+    width: 100%;
+    height: 100%;
+
+    /* background: linear-gradient(135deg, #f9f9f9, #e6e6e6); */
+
+    border-radius: 40px;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+
+
+
+
+}
+
+.screen-bg{
+    /* background-image: url('https://freenaturestock.com/wp-content/uploads/freenaturestock-528-1024x1536.jpeg');
+    background-image: url('https://freenaturestock.com/wp-content/uploads/freenaturestock-1039-1024x1536.jpeg')
+    background-size: cover;
+    filter: blur(5px) brightness(1.1); */
+
+    background: linear-gradient(135deg, #40a2d7 0%, #40a2D7 25%, #4cc0ff 25%, #4cc0ff 50%, #27303d 50%, #27303d 75%, #1f2732 75%, #1f2732 100%);
+
+
+    top: 0;
+    left: 0;
+
+    border-radius: 40px;
+    
+    
+
+    width: 100%;
+    height: 100%;
+    z-index: 8;
+}
+
+
+.app-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+
+    width: calc(100% - 60px);
+    padding: 20px 0px;
+    margin: auto;
+    margin-top: 40px;
+
+    top: 0;
+
+    position: absolute;
+
+    z-index: 10;
+}
+
+.app-icon {
+    width: 120px;
+    height: 120px;
+    
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 25px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+
+    padding: 20px;
+
+    background: linear-gradient(135deg, #007aff 0%, #007aff 50%, #2600ff 50%, #2600ff 100%);
+
+
+
+    box-shadow: 0 4px 8px rgba(0, 122, 255, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+
+/* smaller than 1150px */
+@media screen and (max-width: 1150px) {
+    .first-section {
+        height: fit-content;
+        padding-bottom: 70px;
+    }
+
+    .right{
+        align-items: start;
+    }
+    .phone {
+        /* width: clamp(300px, 80%, 400px); */
+        width: clamp(300px, 30vw, 400px);
+        /* aspect-ratio: 1/1.25; */
+        height: clamp(600px, 60vw, 800px);
+    }
+
+    .app-icon{
+        width: clamp(80px, 7.5vw, 120px);
+        height: clamp(80px, 7.5vw, 120px);
+        font-size: clamp(22px, 2vw, 20px);
+    }
+}
+
+/* smaller than 850px */
+@media screen and (max-width: 850px) {
+    /* .title {
+        font-size: 3.5em;
+    } */
+    .first-section {
+        flex-direction: column;
+        height: fit-content;
+    }
+    .left {
+        width: 100%;
+        min-height: 450px;
+        height: clamp(450px, 20vw, 800px);
+    }
+    .first-left-content {
+        text-align: center;
+        margin-top: 10%;
+    }
+    .right {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .phone{
+        margin: auto;
+        margin-bottom: 50px;
+        margin-top: 5vw;
+    }
+}
+
+@media screen and (max-width: 435px) {
+    .title {
+        font-size: 3em;
+    }
+    .description {
+        font-size: 1.2em;
+    }
+
+    .left {
+        min-height: fit-content;
+        height: fit-content;
+        margin-bottom: 30px;
+    }
+    
+}
+
+
+.app-icon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 122, 255, 0.3);
+}
+
+/* Instagram */
+.app-icon-style-ig {
+    background: linear-gradient(135deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+    box-shadow: 0 4px 8px rgba(221, 42, 123, 0.4);
+}
+
+.app-icon-style-fb {
+    background: linear-gradient(135deg, #3b5998, #8b9dc3);
+    box-shadow: 0 4px 8px rgba(59, 89, 152, 0.4);
+}
+
+.app-icon-style-tw {
+    background: linear-gradient(-45deg, #ff00dd, #6b00de);
+    box-shadow: 0 4px 8px rgba(29, 161, 242, 0.4);
+}
+
+.app-icon-style-li {
+    background: linear-gradient(45deg, #c2e59c, #64b3f4, #3a66b7, #2a4888);
+    box-shadow: 0 4px 8px rgba(0, 119, 181, 0.4);
+}
+
+/* Netflix */
+.app-icon-style-nf {
+    background: linear-gradient(135deg, #de1600, #1F1C18);
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.4);
+}
+
+/* TikTok */
+.app-icon-style-tt {
+    background: linear-gradient(135deg, #F00, #010101, #00F);
+    box-shadow: 0 4px 8px rgba(1, 1, 1, 0.4);
+}
+
+.app-icon-style-bb{
+    background: #2e2e2e;
+}
+
+.app-icon-style-yb{
+    background: linear-gradient(135deg, #2e2e2e 0%, #2e2e2e 78%, #ff0 78%, #ff0 82%,  #2e2e2e 82%, #2e2e2e 100%);
+}
+
+.app-icon-style-yb3{
+    background: linear-gradient(135deg, #ff0 0%, #ff0 25%, #2e2e2e 25%, #2e2e2e 75%,  #ff0 75%, #ff0 100%);
+}
+
+.app-icon-style-yb2{
+    background: linear-gradient(135deg, #2e2e2e 0%, #2e2e2e 18%, #ff0 18%, #ff0 22%, #2e2e2e 22%, #2e2e2e 78%, #ff0 78%, #ff0 82%,  #2e2e2e 82%, #2e2e2e 100%);
+}
+
+.app-icon-style-yb4{
+    background: linear-gradient(-45deg, #2e2e2e 0%, #2e2e2e 18%, #ff0 18%, #ff0 22%, #2e2e2e 22%, #2e2e2e 28%, #ff0 28%, #ff0 32%, #2e2e2e 32%, #2e2e2e 78%,  #ff0 78%, #ff0 82%,  #2e2e2e 82%, #2e2e2e 100%);
+}
+
+.app-icon-style-yb5{
+    background: linear-gradient(-45deg, #ff0 0%, #ff0 15%, #2e2e2e 15%, #2e2e2e 20%, #ff0 20%, #ff0 24%, #2e2e2e 24%, #2e2e2e 78%,  #ff0 78%, #ff0 82%,  #2e2e2e 82%, #2e2e2e 100%);
+}
+
+
+.second-section{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+
+    background-color: #2e2e2e;
+    overflow: hidden;
+    position: relative;
+}
+
+.second-section-video-bg{
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px) brightness(0.8);
+    position: absolute;
+    z-index: 3;
+    transform: scale(1.1);
+    margin: -5px -10px -10px -5px;
+    
+    object-fit: cover;
+}
+
+.second-section-third{
+    width: 33%;
+    height: inherit;
+    z-index: 5;
+}
+
+.about-us{
+    font-size: 5rem;
+    font-weight: 700;
+    color: #ffffff;
+    font-family: 'Tomorrow', Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.about-us-text{
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: #ffffff;
+    font-family: '', Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+.ig-post-container{
+    width: 400px;
+    height: 600px;
+    background: #0d0d0d;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 150px;
+
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.post-header{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    border-bottom: #aaa solid 0.5px;
+}
+
+.post-user-icon img{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    margin-left: 10px;
+
+    /* border: #f0f solid 1px; */
+}
+
+.post-name{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.post-name:hover{
+    text-decoration: underline;
+}
+
+.post-photo{
+    width: 100%;
+    height: 400px;
+    background: #000;
+    background-image: url("https://freenaturestock.com/wp-content/uploads/freenaturestock-528-1024x1536.jpeg");
+    background-size: cover;
+    background-position: center;
+}
+
+.post-interact{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: row;
+    border-top: #aaa solid 0.5px;
+}
+
+
+.post-interact i:not(.post-interact-bookmark){
+    font-size: 2rem;
+    color: #ffffff;
+    margin-left: 10px; 
+}
+
+.post-interact-bookmark{
+    margin-left: auto;
+    margin-right: 20px;
+    font-size: 2rem;
+    color: #ffffff;
+}
+
+.post-description{
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    flex-direction: column;
+}
+
+.post-description-text{
+    font-size: 1.0rem;
+    font-weight: 400;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    margin-top: 0;
+}
+
+
+@media screen and (max-width: 1300px) {
+    .ig-post-container{
+        width: clamp(300px, 80%, 400px);
+        height: clamp(450px, 40vw, 600px);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .ig-post-container{
+        width: clamp(250px, 80%, 400px);
+        height: clamp(400px, 40vw, 600px);
+    }
+
+    .about-us-text{
+        max-width: 80%;
+        margin: auto;
+    }
+
+    .second-section{
+        flex-wrap: wrap;
+    }
+
+    .second-section-third{
+        width: 100%;
+        height: fit-content;
+    }
+
+    .ig-post-container{
+        margin-top: 50px;
+        width: 400px;
+        height: 600px;
+    }
+
+    .second-third-1{
+        order: 2;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .ig-post-container{
+        width: clamp(200px, 80vw, 400px);
+        height: clamp(350px, 120vw, 600px);
+
+    }
+
+    .post-interact i:not(.post-interact-bookmark){
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+
+    .post-interact-bookmark{
+        font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+
+    .post-user-icon{
+        height: 100%;
+    }
+
+    .post-user-icon img{
+        height: 70%;
+        margin-top: 15%;
+        width:auto;
+    }
+
+    .post-name{
+        font-size: clamp(1rem, 3vw, 1.2rem);
+    }
+
+    .post-description-text{
+        font-size: clamp(0.8rem, 2vw, 1rem);
+    }
+    
+}
+
+
+

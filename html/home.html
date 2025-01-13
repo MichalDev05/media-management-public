@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domov</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/icofont@1.0.0/dist/icofont.min.css">
+</head>
+<body>
+    <nav></nav>
+    <section class="first-section">
+        <div class="left">
+            <div class="first-left-content">
+                <!-- <h2 class="title">Social Media Management KATANA</h2> -->
+                <h2 class="title">AF Business Group</h2>
+                <p class="description">Spravovanie stránok a sociálnych sietí pre firmy a jednotlivcov</p>
+            </div>
+        </div>
+        <div class="right">
+            <div class="phone">
+                <div class="screen">
+                    <div class="screen-bg"></div>
+                    <div class="notch"></div>
+                    <div class="app-container">
+                        <!-- <a href="#dashboard" class="app-icon app-icon-style-bb">O nás</a> -->
+                        <a href="#analytics" class="app-icon app-icon-style-yb">Prečo práve my</a>
+                        <a href="#pricing" class="app-icon app-icon-style-yb2">Naše projetky</a>
+                        <a href="#about-us" class="app-icon app-icon-style-yb5">Cenník</a>
+                        <a href="#contact" class="app-icon app-icon-style-ig">Kontakt</a>
+                        <a href="#contact" class="app-icon app-icon-style-li">Objednať online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="second-section" id="about-us">
+        <video id="bg-video" src="/realestate-bg.mp4" class="second-section-video-bg" autoplay muted loop></video>
+        <div class="second-section-third second-third-1">
+            <div class="ig-post-container" id="post1">
+                <div class="post-header">
+                    <div class="post-user-icon">
+                        <img src="/michal-pfp.jpg" alt="" srcset="">
+                    </div>
+                    <a href="https://www.instagram.com/michal_frater/" class="post-name">Michal Fráter</a>
+                </div>
+                <div class="post-photo">
+                </div>
+                <div class="post-interact">
+                    <i class="icofont-heart"></i>
+                    <i class="icofont-speech-comments"></i>
+                    <i class="icofont-paper-plane"></i>
+                    <i class="post-interact-bookmark icofont-book-mark"></i>
+                </div>
+                <div class="post-description">
+                    <p class="post-description-text">Mladý človek ma za sebou tvorbu webstránok a množstvo programovania a nebojí sa ísť do niečoho nového </p>
+                </div>
+            </div>
+        </div>
+        <div class="second-section-third second-third-2">
+            <h3 class="about-us">O nás</h3>
+            <p class="about-us-text">Ambiciózny tím mladých ľudí ktorých bavia sociálne siete a práca s nimi</p>
+        </div>
+        <div class="second-section-third second-third-3">
+            <div class="ig-post-container" id="post2">
+                <div class="post-header">
+                    <div class="post-user-icon">
+                        <img src="/alex-pfp.jpg" alt="" srcset="">
+                    </div>
+                    <a href="https://www.instagram.com/alex__katona/" class="post-name">Alex Katona</a>
+                </div>
+                <div class="post-photo">
+                </div>
+                <div class="post-interact">
+                    <i class="icofont-heart"></i>
+                    <i class="icofont-speech-comments"></i>
+                    <i class="icofont-paper-plane"></i>
+                    <i class="post-interact-bookmark icofont-book-mark"></i>
+                </div>
+                <div class="post-description">
+                    <p class="post-description-text">Ambiciózny muž ktorý má za sebou veľa projektov, má skúsenosti s social media marketingom</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const post1 = document.getElementById('post1');
+        const post2 = document.getElementById('post2');
+        const strengthX = 20; // Strength of the wiggle
+        const strengthY = 20; // Strength of the wiggle
+        const strengthTilt = 1; // Strength of the wiggle
+        const speedX = 0.02; // Speed of the wiggle
+        const speedY = 0.015; // Speed of the wiggle
+        const speedTilt = 0.015; // Speed of the wiggle
+        let wiggleInterval;
+
+
+
+        post1.addEventListener('mouseover', ()=>{startWiggle(post1)});
+        post1.addEventListener('mouseout', ()=>{stopWiggle(post1)});
+        post2.addEventListener('mouseover', ()=>{startWiggle(post2)});
+        post2.addEventListener('mouseout', ()=>{stopWiggle(post2)});
+
+
+        // startWiggle(wiggleElement);
+        function startWiggle(wiggleElement) {
+            if (!isDesktop()) return;
+            let angleX = 0; // Starting angle for circular motion
+            let angleY = 0; // Starting angle for circular motion
+            let tilt = 0;
+
+            // Clear any existing interval (prevents duplicate intervals)
+            clearInterval(wiggleInterval);
+
+            // Set up the interval to animate the element
+            wiggleInterval = setInterval(() => {
+                // Calculate new position based on the angle
+                const x = Math.sin(angleX * 2) * strengthX / 2; // Horizontal wiggle (sine wave)
+                const y = Math.cos(angleY) * strengthY; // Vertical wiggle (cosine wave)
+                const t = Math.sin(tilt) * strengthTilt; // Tilt (sine wave)
+
+                // Apply transformation
+                wiggleElement.style.transform = `translate(${x}px, ${y}px)`;
+                wiggleElement.style.transform += `rotate(${t}deg)`;
+
+
+                // Increment the angle slightly to create the motion
+                angleX += speedX;
+                angleY += speedY;
+                tilt += speedTilt;
+            }, 20); // Run every 20ms for a smooth animation
+        }
+
+        function stopWiggle(wiggleElement) {
+            // Clear the interval to stop the animation
+            clearInterval(wiggleInterval);
+
+            // Reset the element's position
+            wiggleElement.style.transform = 'translate(0, 0)';
+        }
+
+        function isDesktop(){
+            return window.innerWidth > 768;
+        }
+
+    </script>
+</body>
+</html>
